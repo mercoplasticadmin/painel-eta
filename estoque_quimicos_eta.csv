@@ -1,0 +1,56 @@
+ID_Registro,Data_Apontamento,Produto_Quimico,Etapa_Tratamento,Unidade,Estoque_Teorico,Estoque_Fisico_Atual,Consumo_Medio_Diario,Custo_Unitario_BRL,Condicao_Agua_Bruta
+REG-001,2024-10-01,Sulfato de Alumínio,Coagulação,kg,4800,4750,180,2.50,Normal
+REG-002,2024-10-04,Sulfato de Alumínio,Coagulação,kg,4260,4210,180,2.50,Normal
+REG-003,2024-10-08,Sulfato de Alumínio,Coagulação,kg,3850,3720,350,2.50,Alta Turbidez - Chuva
+REG-004,2024-10-11,Sulfato de Alumínio,Coagulação,kg,2800,2650,360,2.50,Alta Turbidez - Chuva
+REG-005,2024-10-15,Sulfato de Alumínio,Coagulação,kg,2120,2080,175,2.50,Normal
+REG-006,2024-10-22,Sulfato de Alumínio,Coagulação,kg,4500,4480,190,2.50,Normal
+REG-007,2024-10-25,Sulfato de Alumínio,Coagulação,kg,3900,3750,340,2.50,Alta Turbidez - Chuva
+REG-008,2024-10-29,Sulfato de Alumínio,Coagulação,kg,2540,2380,370,2.50,Alta Turbidez - Chuva
+REG-009,2024-11-01,Sulfato de Alumínio,Coagulação,kg,1850,1790,185,2.50,Normal
+REG-010,2024-11-08,Sulfato de Alumínio,Coagulação,kg,1200,1100,345,2.50,Alta Turbidez - Chuva
+REG-011,2024-10-01,PAC - Policloreto de Alumínio,Coagulação,L,3200,3150,120,4.80,Normal
+REG-012,2024-10-04,PAC - Policloreto de Alumínio,Coagulação,L,2840,2800,125,4.80,Normal
+REG-013,2024-10-08,PAC - Policloreto de Alumínio,Coagulação,L,2460,2350,248,4.80,Alta Turbidez - Chuva
+REG-014,2024-10-11,PAC - Policloreto de Alumínio,Coagulação,L,1710,1590,260,4.80,Alta Turbidez - Chuva
+REG-015,2024-10-15,PAC - Policloreto de Alumínio,Coagulação,L,1200,1160,115,4.80,Normal
+REG-016,2024-10-18,PAC - Policloreto de Alumínio,Coagulação,L,3600,3560,130,4.80,Normal
+REG-017,2024-10-25,PAC - Policloreto de Alumínio,Coagulação,L,2990,2850,255,4.80,Alta Turbidez - Chuva
+REG-018,2024-10-29,PAC - Policloreto de Alumínio,Coagulação,L,2200,2060,268,4.80,Alta Turbidez - Chuva
+REG-019,2024-11-05,PAC - Policloreto de Alumínio,Coagulação,L,1300,1240,118,4.80,Normal
+REG-020,2024-11-08,PAC - Policloreto de Alumínio,Coagulação,L,2090,1950,260,4.80,Alta Turbidez - Chuva
+REG-021,2024-10-01,Hipoclorito de Sódio 12%,Desinfecção,L,5600,5520,220,3.20,Normal
+REG-022,2024-10-08,Hipoclorito de Sódio 12%,Desinfecção,L,4980,4850,280,3.20,Alta Turbidez - Chuva
+REG-023,2024-10-11,Hipoclorito de Sódio 12%,Desinfecção,L,4140,3980,290,3.20,Alta Turbidez - Chuva
+REG-024,2024-10-15,Hipoclorito de Sódio 12%,Desinfecção,L,3520,3450,215,3.20,Normal
+REG-025,2024-10-22,Hipoclorito de Sódio 12%,Desinfecção,L,6200,6150,225,3.20,Normal
+REG-026,2024-10-25,Hipoclorito de Sódio 12%,Desinfecção,L,5500,5380,275,3.20,Alta Turbidez - Chuva
+REG-027,2024-10-29,Hipoclorito de Sódio 12%,Desinfecção,L,4400,4250,285,3.20,Alta Turbidez - Chuva
+REG-028,2024-11-01,Hipoclorito de Sódio 12%,Desinfecção,L,3540,3480,218,3.20,Normal
+REG-029,2024-11-08,Hipoclorito de Sódio 12%,Desinfecção,L,2800,2720,272,3.20,Alta Turbidez - Chuva
+REG-030,2024-10-01,Cal Hidratada,Correção de pH,kg,3800,3750,95,1.80,Normal
+REG-031,2024-10-04,Cal Hidratada,Correção de pH,kg,3520,3480,90,1.80,Normal
+REG-032,2024-10-08,Cal Hidratada,Correção de pH,kg,3100,2980,160,1.80,Alta Turbidez - Chuva
+REG-033,2024-10-15,Cal Hidratada,Correção de pH,kg,2600,2550,92,1.80,Normal
+REG-034,2024-10-22,Cal Hidratada,Correção de pH,kg,4200,4160,98,1.80,Normal
+REG-035,2024-10-25,Cal Hidratada,Correção de pH,kg,3800,3680,155,1.80,Alta Turbidez - Chuva
+REG-036,2024-10-29,Cal Hidratada,Correção de pH,kg,3180,3050,165,1.80,Alta Turbidez - Chuva
+REG-037,2024-11-01,Cal Hidratada,Correção de pH,kg,2560,2500,94,1.80,Normal
+REG-038,2024-11-08,Cal Hidratada,Correção de pH,kg,2080,1980,150,1.80,Alta Turbidez - Chuva
+REG-039,2024-10-01,Ácido Fluossilícico,Fluoretação,L,1800,1780,35,6.50,Normal
+REG-040,2024-10-04,Ácido Fluossilícico,Fluoretação,L,1690,1670,36,6.50,Normal
+REG-041,2024-10-08,Ácido Fluossilícico,Fluoretação,L,1560,1540,38,6.50,Alta Turbidez - Chuva
+REG-042,2024-10-15,Ácido Fluossilícico,Fluoretação,L,1300,1285,34,6.50,Normal
+REG-043,2024-10-22,Ácido Fluossilícico,Fluoretação,L,2200,2180,35,6.50,Normal
+REG-044,2024-10-25,Ácido Fluossilícico,Fluoretação,L,2080,2060,37,6.50,Alta Turbidez - Chuva
+REG-045,2024-10-29,Ácido Fluossilícico,Fluoretação,L,1930,1910,39,6.50,Alta Turbidez - Chuva
+REG-046,2024-11-01,Ácido Fluossilícico,Fluoretação,L,1780,1760,34,6.50,Normal
+REG-047,2024-11-08,Ácido Fluossilícico,Fluoretação,L,1620,1600,36,6.50,Alta Turbidez - Chuva
+REG-048,2024-10-01,Polímero Aniônico,Floculação,kg,420,415,12,18.50,Normal
+REG-049,2024-10-08,Polímero Aniônico,Floculação,kg,370,358,22,18.50,Alta Turbidez - Chuva
+REG-050,2024-10-15,Polímero Aniônico,Floculação,kg,310,305,11,18.50,Normal
+REG-051,2024-10-22,Polímero Aniônico,Floculação,kg,500,495,13,18.50,Normal
+REG-052,2024-10-25,Polímero Aniônico,Floculação,kg,460,448,24,18.50,Alta Turbidez - Chuva
+REG-053,2024-10-29,Polímero Aniônico,Floculação,kg,365,350,25,18.50,Alta Turbidez - Chuva
+REG-054,2024-11-01,Polímero Aniônico,Floculação,kg,290,285,12,18.50,Normal
+REG-055,2024-11-08,Polímero Aniônico,Floculação,kg,240,232,23,18.50,Alta Turbidez - Chuva
