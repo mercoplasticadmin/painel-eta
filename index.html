@@ -312,8 +312,9 @@ tbody tr.row-warn:hover { background: var(--warn-bg); filter: brightness(1.03); 
 /* ── Error ── */
 .error-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-  display: flex; align-items: center; justify-content: center; z-index: 100; padding: 20px;
+  display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px;
 }
+.error-overlay.visible { display: flex; }
 .error-box {
   background: var(--bg-card); border-radius: 16px; padding: 36px; max-width: 460px; width: 100%;
   text-align: center; box-shadow: var(--shadow-lg);
@@ -342,8 +343,9 @@ tbody tr.row-warn:hover { background: var(--warn-bg); filter: brightness(1.03); 
 .config-btn:hover { background: rgba(255,255,255,0.2); }
 .config-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-  display: flex; align-items: center; justify-content: center; z-index: 100; padding: 20px;
+  display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px;
 }
+.config-overlay.visible { display: flex; }
 .config-box {
   background: var(--bg-card); border-radius: 16px; padding: 32px; max-width: 520px; width: 100%;
   box-shadow: var(--shadow-lg);
@@ -399,7 +401,7 @@ tbody tr.row-warn:hover { background: var(--warn-bg); filter: brightness(1.03); 
 }
 </style>
 
-<div class="loading-bar" id="loadingBar" hidden></div>
+<div class="loading-bar" id="loadingBar" style="display:none"></div>
 
 <header class="header">
   <div class="header-inner">
@@ -421,14 +423,14 @@ tbody tr.row-warn:hover { background: var(--warn-bg); filter: brightness(1.03); 
         <span id="syncStatus">Aguardando dados...</span>
         <span class="countdown-badge" id="countdown">--</span>
       </div>
-      <button class="config-btn" onclick="document.getElementById('configModal').hidden=false" title="Configurar planilha">
+      <button class="config-btn" onclick="document.getElementById('configModal').classList.add('visible')" title="Configurar planilha">
         <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.2.966.46 1.397.772l1.423-.507a1 1 0 011.164.39l.68 1.176a1 1 0 01-.216 1.194l-1.128.966a7.06 7.06 0 010 1.544l1.128.966a1 1 0 01.216 1.194l-.68 1.176a1 1 0 01-1.164.39l-1.423-.507a5.97 5.97 0 01-1.397.772l-.295 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a5.97 5.97 0 01-1.397-.772l-1.423.507a1 1 0 01-1.164-.39l-.68-1.176a1 1 0 01.216-1.194l1.128-.966a7.06 7.06 0 010-1.544l-1.128-.966a1 1 0 01-.216-1.194l.68-1.176a1 1 0 011.164-.39l1.423.507c.431-.312.9-.572 1.397-.772l.295-1.473zM10 13a3 3 0 100-6 3 3 0 000 6z"/></svg>
       </button>
     </div>
   </div>
 </header>
 
-<div class="config-overlay" id="configModal" hidden>
+<div class="config-overlay" id="configModal">
   <div class="config-box">
     <h2>Conectar ao Google Sheets</h2>
     <p>Cole o link da sua planilha do Google Sheets abaixo. O painel vai ler os dados automaticamente a cada 30 segundos.</p>
@@ -444,7 +446,7 @@ tbody tr.row-warn:hover { background: var(--warn-bg); filter: brightness(1.03); 
     </div>
     <div class="config-actions">
       <button class="retry-btn" onclick="saveSheetUrl()">Conectar</button>
-      <button class="cancel-btn" onclick="document.getElementById('configModal').hidden=true">Cancelar</button>
+      <button class="cancel-btn" onclick="document.getElementById('configModal').classList.remove('visible')">Cancelar</button>
     </div>
   </div>
 </div>
@@ -542,7 +544,7 @@ tbody tr.row-warn:hover { background: var(--warn-bg); filter: brightness(1.03); 
 
 </div>
 
-<div class="error-overlay" id="errorOverlay" hidden>
+<div class="error-overlay" id="errorOverlay">
   <div class="error-box">
     <div class="error-icon">&#9888;&#65039;</div>
     <h2>Conexão com Google Sheets falhou</h2>
@@ -561,7 +563,7 @@ tbody tr.row-warn:hover { background: var(--warn-bg); filter: brightness(1.03); 
         <li>Em "Acesso geral", selecione <strong>Qualquer pessoa com o link</strong></li>
       </ol>
     </div>
-    <button class="retry-btn" onclick="document.getElementById('errorOverlay').hidden=true;loadData()">Tentar novamente</button>
+    <button class="retry-btn" onclick="document.getElementById('errorOverlay').classList.remove('visible');loadData()">Tentar novamente</button>
   </div>
 </div>
 
@@ -687,8 +689,8 @@ function saveSheetUrl() {
       const now = new Date();
       $('syncStatus').textContent = now.toLocaleTimeString('pt-BR') + ' · Google Sheets';
       $('syncDot').classList.remove('loading','error');
-      $('errorOverlay').hidden = true;
-      setTimeout(() => { $('configModal').hidden = true; }, 1200);
+      $('errorOverlay').classList.remove('visible');
+      setTimeout(() => { $('configModal').classList.remove('visible'); }, 1200);
     })
     .catch(e => {
       status.innerHTML = '✗ Não conseguiu conectar. Verifique se a planilha está <strong>Publicada na Web</strong> e com <strong>acesso público</strong>.';
@@ -1006,7 +1008,7 @@ async function tryFetch(url) {
 }
 
 async function loadData() {
-  $('loadingBar').hidden = false;
+  $('loadingBar').style.display = 'block';
   $('syncDot').classList.add('loading'); $('syncDot').classList.remove('error');
   $('syncStatus').textContent = 'Sincronizando...';
   let source = '';
@@ -1027,9 +1029,9 @@ async function loadData() {
   const now = new Date();
   $('syncStatus').textContent = now.toLocaleTimeString('pt-BR') + ' · ' + source;
   $('syncDot').classList.remove('loading');
-  $('errorOverlay').hidden = true;
+  $('errorOverlay').classList.remove('visible');
   countdownVal = REFRESH_SEC;
-  $('loadingBar').hidden = true;
+  $('loadingBar').style.display = 'none';
 }
 
 function startRefresh() {
